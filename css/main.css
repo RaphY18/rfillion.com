@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
   font-family: 'playfair Display', serif;
-  overflow: auto;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -110,10 +114,15 @@ button:hover {
   color: #008cff;
 }
 
+.content .container {
+  width: 94vw;
+  margin: 0 auto;
+}
+
 .content .about p {
   font-family: 'roboto', sans-serif;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 4em 3em 4em;
   text-align: center;
 }
@@ -127,8 +136,6 @@ button:hover {
 }
 
 .content .projects .container {
-  width: 94vw;
-  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(420px, 1fr))[auto-fit];
@@ -160,5 +167,170 @@ button:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.content .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  margin: 5rem;
+}
+
+.content .contact .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .contact .social-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2.5rem;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.content .contact .social-icon:hover {
+  color: #fff;
+}
+
+.content .contact .social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%);
+}
+
+.content .contact .social-icon:active {
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+.content .contact .social-icon--linkedin {
+  background: #006599;
+  color: #fff;
+}
+
+.content .contact .social-icon--linkedin .tooltip {
+  background: #006599;
+  color: currentColor;
+}
+
+.content .contact .social-icon--linkedin .tooltip:after {
+  border-top-color: #006599;
+}
+
+.content .contact .social-icon--twitter {
+  background: #2b97f1;
+  color: #fff;
+}
+
+.content .contact .social-icon--twitter .tooltip {
+  background: #2b97f1;
+  color: currentColor;
+}
+
+.content .contact .social-icon--twitter .tooltip:after {
+  border-top-color: #2b97f1;
+}
+
+.content .contact .social-icon--facebook {
+  background: #3b5a9b;
+  color: #fff;
+}
+
+.content .contact .social-icon--facebook .tooltip {
+  background: #3b5a9b;
+  color: currentColor;
+}
+
+.content .contact .social-icon--facebook .tooltip:after {
+  border-top-color: #3b5a9b;
+}
+
+.content .contact .social-icon--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+
+.content .contact .social-icon--instagram .tooltip {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: currentColor;
+}
+
+.content .contact .social-icon--instagram .tooltip:after {
+  border-top-color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.content .contact .social-icon--github {
+  background: #4284c0;
+  color: #fff;
+}
+
+.content .contact .social-icon--github .tooltip {
+  background: #4284c0;
+  color: currentColor;
+}
+
+.content .contact .social-icon--github .tooltip:after {
+  border-top-color: #4284c0;
+}
+
+.content .contact .social-icon i {
+  position: relative;
+  top: 1px;
+}
+
+.content .contact .tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: 'montserat', sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.content .contact .tooltip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
 }
 /*# sourceMappingURL=main.css.map */
