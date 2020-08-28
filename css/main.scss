@@ -11,9 +11,10 @@
 
 $color-github: #4284c0;
 $color-twitter: #2b97f1;
-$color-instagram: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+$color-instagram: #cc2366;
 $color-linkedin: #006599;
 $color-facebook: #3b5a9b;
+$color-email: #c5c5c5;
 
 
 html {scroll-behavior: smooth;}
@@ -204,6 +205,7 @@ button {
             &--facebook { @include social-icon($color-facebook); }
             &--instagram { @include social-icon($color-instagram); }
             &--github { @include social-icon($color-github); }
+            &--email { @include social-icon($color-email); }
 
             i {position: relative; top: 1px}
         }
@@ -234,6 +236,7 @@ button {
                 border-width: 10px 10px 0 10px;
                 border-color: transparent;
                 transform: translate(-50%, 100%);
+                
             }
         }
     }

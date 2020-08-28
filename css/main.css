@@ -267,17 +267,17 @@ button:hover {
 }
 
 .content .contact .social-icon--instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: #cc2366;
   color: #fff;
 }
 
 .content .contact .social-icon--instagram .tooltip {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: #cc2366;
   color: currentColor;
 }
 
 .content .contact .social-icon--instagram .tooltip:after {
-  border-top-color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-top-color: #cc2366;
 }
 
 .content .contact .social-icon--github {
@@ -292,6 +292,20 @@ button:hover {
 
 .content .contact .social-icon--github .tooltip:after {
   border-top-color: #4284c0;
+}
+
+.content .contact .social-icon--email {
+  background: #c5c5c5;
+  color: #fff;
+}
+
+.content .contact .social-icon--email .tooltip {
+  background: #c5c5c5;
+  color: currentColor;
+}
+
+.content .contact .social-icon--email .tooltip:after {
+  border-top-color: #c5c5c5;
 }
 
 .content .contact .social-icon i {
