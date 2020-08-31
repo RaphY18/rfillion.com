@@ -1,0 +1,362 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "playfair Display", serif;
+  //no scrollbar
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+$color-github: #4284c0;
+$color-twitter: #2b97f1;
+$color-instagram: #cc2366;
+$color-linkedin: #006599;
+$color-facebook: #3b5a9b;
+$color-email: #c5c5c5;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin-right: auto;
+
+  &::first-letter {
+    color: #008cff;
+  }
+}
+
+li,
+a,
+button {
+  font-size: 18px;
+  color: #353535;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.nav__links {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    padding: 0px 20px;
+    a {
+      transition: all 0.3s ease-in-out 0s;
+      &:hover {
+        color: #008cff;
+      }
+    }
+  }
+}
+
+.burger {
+  display: none;
+  div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #008cff;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 7rem;
+    &::first-letter {
+      color: #008cff;
+    }
+  }
+  img {
+    width: 50vw;
+  }
+}
+
+.content {
+  #about,
+  #projects,
+  #contact {
+    margin: 3rem 0 2.5rem 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+
+    &::first-letter {
+      color: #008cff;
+    }
+  }
+
+  .container {
+    width: 94vw;
+    margin: 0 auto;
+  }
+
+  .about {
+    p {
+      font-family: "roboto", sans-serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin: 0 4em 3em 4em;
+      text-align: center;
+    }
+
+    marquee {
+      background-color: #008cff;
+      color: white;
+      font-size: 6rem;
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .projects {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+      .card {
+        padding: 2rem;
+        margin: 1.5rem;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        outline: 1px solid #eae6ef;
+
+        &-content {
+          p {
+            font-family: "roboto", sans-serif;
+            font-weight: 300;
+            font-size: 1.7rem;
+            margin-bottom: 1.5rem;
+
+            &::first-letter {
+              color: #008cff;
+              font-weight: 500;
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 5rem;
+
+    @mixin social-icon($color) {
+      background: $color;
+      color: #fff;
+
+      .tooltip {
+        background: $color;
+        color: currentColor;
+
+        &:after {
+          border-top-color: $color;
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 2.5rem;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        color: #fff;
+
+        .tooltip {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, -150%);
+        }
+      }
+
+      &:active {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+      }
+
+      &--linkedin {
+        @include social-icon($color-linkedin);
+      }
+      &--twitter {
+        @include social-icon($color-twitter);
+      }
+      &--facebook {
+        @include social-icon($color-facebook);
+      }
+      &--instagram {
+        @include social-icon($color-instagram);
+      }
+      &--github {
+        @include social-icon($color-github);
+      }
+      &--email {
+        @include social-icon($color-email);
+      }
+
+      i {
+        position: relative;
+        top: 1px;
+      }
+    }
+
+    .tooltip {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      padding: 0.8rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-family: "montserat", sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      text-transform: uppercase;
+      transform: translate(-50%, -150%);
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: transparent;
+        transform: translate(-50%, 100%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav__links {
+    position: absolute;
+    right: 0;
+    top: 13vh;
+    height: 92vh;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    background-color: white;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: all 0.2s ease-in-out;
+    li,
+    a {
+      font-size: 1.8rem;
+      &::first-letter {
+        color: #008cff;
+      }
+    }
+    li {
+      opacity: 0;
+    }
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .content {
+    .about {
+      p {
+        margin: 0 3em 3em 3em;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .welcome {
+    img {
+      margin-top: 1.5rem;
+      width: 94vw;
+    }
+  }
+
+  .content {
+    .contact {
+      margin: 3rem;
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: initial;
+      }
+    }
+  }
+}
+
+.nav-active {
+  transform: translateX(0);
+}
+
+.toggle {
+  .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .line2 {
+    opacity: 0;
+  }
+  .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
