@@ -62,17 +62,6 @@ header {
   }
 }
 
-.burger {
-  display: none;
-  div {
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: #008cff;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
 .welcome {
   display: flex;
   align-items: center;
@@ -128,7 +117,7 @@ header {
   .projects {
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
       .card {
         padding: 2rem;
@@ -274,36 +263,13 @@ header {
   body {
     overflow-x: hidden;
   }
-  .nav__links {
-    position: absolute;
-    right: 0;
-    top: 13vh;
-    height: 92vh;
-    padding: 10rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 75%;
-    background-color: white;
-    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.2);
-    transform: translateX(100%);
-    transition: all 0.2s ease-in-out;
-    li,
-    a {
-      font-size: 1.8rem;
-      &::first-letter {
-        color: #008cff;
-      }
-    }
-    li {
-      opacity: 0;
-    }
+
+  .logo {
+    margin: 0 auto;
   }
 
-  .burger {
-    display: block;
-    cursor: pointer;
+  .nav__links {
+    display: none;
   }
 
   .content {
